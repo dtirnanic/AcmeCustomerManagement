@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AcmeCustomerManagement
 {
-    class Customer
+    public class Customer
     {
         public int CustomerId { get; set; }
         public string Email { get; set; }
@@ -16,7 +16,7 @@ namespace AcmeCustomerManagement
         {
             get
             {
-                return LastName + "," + FirstName;
+                return LastName + ", " + FirstName;
             }
         }
 
