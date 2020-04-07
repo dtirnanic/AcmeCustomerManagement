@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace AcmeCustomerManagement
 {
-    class Order
+    public class Order
     {
-        public DateTime OrderDate { get; set; }
+        public int OrderId { get; set; }
+        public DateTimeOffset? OrderDate { get; set; }
 
-        public Order Retrieve(int productId)
+        public Order()
+        {
+                
+        }
+        public Order(int orderId)
+        {
+            OrderId = orderId;
+        }
+
+        public Order Retrieve(int orderId)
         {
             return new Order();
-        }
-        public List<Order> Retrieve()
-        {
-            return new List<Order>();
         }
         public bool Save()
         {
@@ -26,9 +32,8 @@ namespace AcmeCustomerManagement
         {
             var isValid = true;
 
-           // if (DateTime.ReferenceEquals() isValid = false;
+            if (OrderDate == null) isValid = false;
             
-
             return isValid;
 
         }

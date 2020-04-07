@@ -8,6 +8,20 @@ namespace AcmeCustomerManagement
 {
     public class Customer
     {
+        public int CustomerId { get; private set; }
+        public string EmailAddress { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return LastName + ", " + FirstName;
+            }
+        }
+        public string HomeAddress { get; set; }
+        public string WorkAddress { get; set; }
+        public static int InstanceCount { get; set; } //static field attached ptoperty to the class itself not as a reference
         public Customer()
         {
 
@@ -18,20 +32,7 @@ namespace AcmeCustomerManagement
             CustomerId = customerId;
         }
 
-        public int CustomerId { get; private set; }
-        public string EmailAddress { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FullName 
-        {
-            get
-            {
-                return LastName + ", " + FirstName;
-            }
-        }
-        public string HomeAddress { get; set; }
-        public string WorkAddress { get; set; }
-        public static int InstanceCount { get; set; } //static field attached ptoperty to the class itself not as a reference
+
         public Customer Retrieve(int customerId)
         {
             return new Customer();

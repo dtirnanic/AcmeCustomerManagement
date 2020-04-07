@@ -6,12 +6,21 @@ using System.Threading.Tasks;
 
 namespace AcmeCustomerManagement
 {
-    class Product
+    public class Product
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string Desctiption { get; set; }
-        public double CurrentPrice { get; set; }
+        public double? CurrentPrice { get; set; }
+        public Product()
+        {
+
+        }
+
+        public Product(int productId)
+        {
+            ProductId = productId;
+        }
 
         public Customer Retrieve(int productId)
         {
@@ -30,7 +39,7 @@ namespace AcmeCustomerManagement
             var isValid = true;
 
             if (string.IsNullOrWhiteSpace(ProductName)) isValid = false;
-            if (string.IsNullOrWhiteSpace(Desctiption)) isValid = false; 
+            if (CurrentPrice == null) isValid = false; 
 
             return isValid;
 
