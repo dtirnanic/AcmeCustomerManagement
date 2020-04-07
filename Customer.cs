@@ -21,7 +21,7 @@ namespace AcmeCustomerManagement
         }
         public string HomeAddress { get; set; }
         public string WorkAddress { get; set; }
-
+        public static int InstanceCount { get; set; } //static field attached ptoperti to the class itself not as a reference
         public Customer Retrieve(int customerId)
         {
             return new Customer();
